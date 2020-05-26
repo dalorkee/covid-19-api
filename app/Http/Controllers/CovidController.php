@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Covid;
 use Log;
+use DB;
 
 class CovidController extends Controller
 {
@@ -13,13 +14,18 @@ class CovidController extends Controller
 	}
 
 	public function getData() {
+		if(DB::connection()->getDatabaseName())
+   {
+     echo "conncted sucessfully to database ".DB::connection()->getDatabaseName();
+   }
+   /*
 
 		try {
 			return $this->success('Success');
 		} catch (Exception $e) {
 			echo $e->getMessage();
 		}
-
+*/
 /*		$data = Covid::select('id', 'sat_id')->where('id', '=', 1)->get();
 		dd($data);
 		if (count($data) > 0) {
