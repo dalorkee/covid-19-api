@@ -13,10 +13,18 @@ class CovidController extends Controller
 	}
 
 	public function getData() {
+		/*
 		try {
 			return $this->success('Success');
 		} catch (Exception $e) {
 			echo $e->getMessage();
+		}
+		*/
+		$data = Covid::select('id', 'sat_id')->where('id', '=', 1)->get();
+		if (count($data) > 0) {
+			return $this->success($data[0]->sat_id);
+		} else {
+			return $this->success('sad');
 		}
 	}
 
