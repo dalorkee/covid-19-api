@@ -3,11 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
+//use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Covid extends Model
 {
-	use SoftDeletes;
+//	use SoftDeletes;
 
 	protected $table = 'invest_pt';
 	protected $primaryKey = 'id';
@@ -18,7 +18,5 @@ class Covid extends Model
 
 	protected $hidden = [];
 	public $timestamps = false;
-
-
 
 }

@@ -24,9 +24,9 @@ class CovidController extends Controller
 		try {
 			$data = Covid::select('id', 'sat_id')->where('id', '=', $request->id)->get();
 			if (count($data) > 0) {
-				return $this->success($data);
+				return $this->success($data[0]->sat_id);
 			} else {
-				return false;
+				return $this->success('sad');
 			}
 		} catch (Exception $e) {
 			Log::error($e->getMessage);
